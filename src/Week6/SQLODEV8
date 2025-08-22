@@ -1,0 +1,90 @@
+*test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.
+CREATE TABLE employee (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    birthday DATE,
+    email VARCHAR(100)
+    );
+
+*Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.
+INSERT INTO employee (id, name, birthday, email) VALUES
+(1, 'Ahmet Yılmaz', '1985-03-12', 'ahmet.yilmaz@example.com'),
+(2, 'Ayşe Demir', '1992-07-25', 'ayse.demir@example.com'),
+(3, 'Mehmet Kaya', '1978-11-02', 'mehmet.kaya@example.com'),
+(4, 'Zeynep Çelik', '1990-04-18', 'zeynep.celik@example.com'),
+(5, 'Mustafa Arslan', '1983-09-09', 'mustafa.arslan@example.com'),
+(6, 'Elif Aydın', '1995-12-21', 'elif.aydin@example.com'),
+(7, 'Hakan Şahin', '1987-06-30', 'hakan.sahin@example.com'),
+(8, 'Fatma Koç', '1991-08-14', 'fatma.koc@example.com'),
+(9, 'Murat Özkan', '1982-05-27', 'murat.ozkan@example.com'),
+(10, 'Seda Yıldırım', '1993-10-05', 'seda.yildirim@example.com'),
+(11, 'Emre Kurt', '1986-01-16', 'emre.kurt@example.com'),
+(12, 'Gizem Polat', '1994-07-02', 'gizem.polat@example.com'),
+(13, 'Ali Güneş', '1979-11-23', 'ali.gunes@example.com'),
+(14, 'Deniz Çetin', '1988-03-29', 'deniz.cetin@example.com'),
+(15, 'Selin Korkmaz', '1996-09-12', 'selin.korkmaz@example.com'),
+(16, 'Canan Erol', '1981-02-04', 'canan.erol@example.com'),
+(17, 'Burak Uçar', '1989-08-08', 'burak.ucar@example.com'),
+(18, 'Ece Taş', '1997-12-19', 'ece.tas@example.com'),
+(19, 'Onur Yavuz', '1984-06-11', 'onur.yavuz@example.com'),
+(20, 'Ceren Kaplan', '1990-10-30', 'ceren.kaplan@example.com'),
+(21, 'Kemal Bal', '1977-04-07', 'kemal.bal@example.com'),
+(22, 'Melis Tuncer', '1992-11-15', 'melis.tuncer@example.com'),
+(23, 'Serkan Aksoy', '1985-05-05', 'serkan.aksoy@example.com'),
+(24, 'Pelin Güngör', '1993-09-18', 'pelin.gungor@example.com'),
+(25, 'Tolga Sezer', '1980-12-28', 'tolga.sezer@example.com'),
+(26, 'Aslı Bozkurt', '1991-07-09', 'asli.bozkurt@example.com'),
+(27, 'Merve Karaca', '1987-03-17', 'merve.karaca@example.com'),
+(28, 'Umut Tekin', '1994-05-23', 'umut.tekin@example.com'),
+(29, 'Yasemin Gür', '1982-08-01', 'yasemin.gur@example.com'),
+(30, 'Koray Doğan', '1979-10-14', 'koray.dogan@example.com'),
+(31, 'Hande Yıldız', '1995-01-29', 'hande.yildiz@example.com'),
+(32, 'Okan Şimşek', '1983-07-03', 'okan.simsek@example.com'),
+(33, 'Buse Acar', '1996-02-22', 'buse.acar@example.com'),
+(34, 'Volkan Er', '1981-05-10', 'volkan.er@example.com'),
+(35, 'İrem Özdemir', '1993-11-27', 'irem.ozdemir@example.com'),
+(36, 'Barış Akın', '1988-06-06', 'baris.akin@example.com'),
+(37, 'Cansu Yüce', '1992-09-13', 'cansu.yuce@example.com'),
+(38, 'Levent Çakır', '1984-12-01', 'levent.cakir@example.com'),
+(39, 'Neslihan Sarı', '1990-04-20', 'neslihan.sari@example.com'),
+(40, 'Furkan Baş', '1997-08-25', 'furkan.bas@example.com'),
+(41, 'Gökhan Tunç', '1986-02-18', 'gokhan.tunc@example.com'),
+(42, 'Derya Öz', '1995-10-08', 'derya.oz@example.com'),
+(43, 'Halil Çalışkan', '1978-11-11', 'halil.caliskan@example.com'),
+(44, 'Esra Bayrak', '1989-03-03', 'esra.bayrak@example.com'),
+(45, 'Özgür Yiğit', '1981-07-21', 'ozgur.yigit@example.com'),
+(46, 'Sevgi Çoban', '1996-12-30', 'sevgi.coban@example.com'),
+(47, 'Doğan Erdem', '1985-06-15', 'dogan.erdem@example.com'),
+(48, 'Nilay Ateş', '1994-09-05', 'nilay.ates@example.com'),
+(49, 'Tuncay Çelik', '1980-01-27', 'tuncay.celik@example.com'),
+(50, 'Elvan Demirtaş', '1991-05-19', 'elvan.demirtas@example.com');
+
+*Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.
+1-UPDATE employee
+  SET name = 'Ahmet Can', email = 'ahmet.can@example.com'
+  WHERE id = 5;
+2-UPDATE employee
+  SET birthday = '1990-01-01', email = 'updated.name@example.com'
+  WHERE name = 'Elif Aydın';
+3-UPDATE employee
+  SET name = 'Mehmet Güncel', email = 'mehmet.guncel@example.com'
+  WHERE birthday = '1987-06-30';
+4-UPDATE employee
+  SET name = 'Zeynep Güncel', birthday = '1992-02-14'
+  WHERE email = 'zeynep.celik@example.com';
+5-UPDATE employee
+  SET email = 'special.update@example.com'
+  WHERE name = 'Murat Özkan' AND birthday = '1982-05-27';
+
+*Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
+1-DELETE FROM employee
+  WHERE id = 10;
+2-DELETE FROM employee
+  WHERE name = 'Ayşe Demir';
+3-DELETE FROM employee
+  WHERE birthday = '1990-04-18';
+4-DELETE FROM employee
+  WHERE email = 'mehmet.kaya@example.com';
+5-DELETE FROM employee
+  WHERE name = 'Murat Özkan' AND birthday = '1982-05-27';
+
